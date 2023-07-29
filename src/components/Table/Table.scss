@@ -1,0 +1,22 @@
+.table *{
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: .4rem .8rem;   
+}
+
+.home__table {
+    display: flex;
+}
+
+.home__table > .table {
+    background-color: rgb(24, 43, 219);
+}
+
+.table {
+    border: 1px solid white;
+    border-collapse: collapse;
+    &__tr:hover {
+        background-color: rgb(56, 93, 214);
+    }
+}
+

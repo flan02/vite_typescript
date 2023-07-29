@@ -1,0 +1,110 @@
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap; /* shorthand */
+  
+}
+
+.col-span-12{
+  flex: 0 0 100%;
+}
+
+.col-span-11{
+  flex: 0 0 91.6%;
+}
+
+.col-span-10{
+  flex: 0 0 83.3%;
+}
+
+.col-span-9{
+  flex: 0 0 75%;
+}
+
+.col-span-8{
+  flex: 0 0 66.6%;
+}
+
+.col-span-7{
+  flex: 0 0 58.3%;
+}
+
+.col-span-6{
+  flex: 0 0 50%;
+}
+
+.col-span-5{
+  flex: 0 0 41.6%;
+}
+
+.col-span-4{
+  flex: 0 0 33.3%;
+}
+
+.col-span-3{
+  flex: 0 0 25%;
+}
+
+.col-span-2{
+  flex: 0 0 16.6%;
+}
+
+.col-span-1{
+  flex: 0 0 8.3%;
+}
+
+.flex-item {
+    border: thin solid #ccc;
+    flex: 0 0 100%; /* shorthand */
+  }
+
+// * Aqui comenzamos las media queries
+
+@media (min-width: 360px) {
+    .flex-item {
+      flex: 0 0 100%;
+      background-color: yellow;
+      color: black;
+    }
+  }
+
+
+@media (min-width: 576px) {
+  .flex-item {
+    flex: 0 0 50%;
+    background-color: black;
+    color: yellow;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex-item {
+    flex: 0 0 33.3%;
+    background-color: yellow;
+    color: black;
+  }
+}
+
+@media (min-width: 992px) {
+  .flex-item {
+    flex: 0 0 25%;
+    background-color: black;
+    color: yellow;
+  }
+}
+
+@media (min-width: 1200px) {
+    .flex-item {
+      flex: 0 0 16.6%;
+      background-color: yellow;
+      color: black;
+    }
+  }
+
+@media (min-width: 1400px) {
+    .flex-item {
+      flex: 0 0 8.3%;
+      background-color: black;
+      color: yellow;
+    }
+  }

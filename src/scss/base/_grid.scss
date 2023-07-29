@@ -1,0 +1,155 @@
+/* 
+* Ejemplo de grid area
+*/
+
+.grid {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  grid-template: 100px 1fr / 1fr;
+  grid-template-areas: 
+  "header"
+  "home"
+  ;
+}
+
+
+
+/*
+
+   body {
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        grid-template: repeat(8, auto) / repeat(6, 1fr);
+        grid-template-areas:
+          "header header header header header header"
+          "uc-c uc-c uc-c uc-c uc-c uc-c"
+          "uc-l uc-l uc-l uc-r uc-r uc-r"
+          "mid mid mid mid mid mid" 
+          "mid mid mid mid mid mid" 
+          "low low low low low low"
+          "low low low low low low"
+          "foo foo foo foo foo foo";
+      }
+
+      body > * {
+         // todos los hijos directos del body
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #222;
+        color: white;
+      }
+
+      h2 {
+        text-align: center;
+        
+      }
+      .header__texto::before {
+        content: "Beauty Header Mobile";
+        margin: auto auto;
+      }
+      .nav__texto::before {
+        content: "Beauty Nav Mobile ";
+        margin: auto auto;
+      }
+      .footer__texto::before {
+        content: "Beauty Footer Mobile ";
+        margin: auto auto;
+      }
+
+      .header {
+        background-color: cornflowerblue;
+        grid-area: header;
+      }
+
+      .nav {
+        display: none;  Solo en mobile 
+        background-color: orangered;
+        grid-area: nav;
+      }
+
+      .uc-left {
+        background-color: rgb(26, 207, 26);
+        grid-area: uc-l;
+      }
+
+      .uc-center {
+        grid-area: uc-c;
+        background-color: yellow;
+        color: #222;
+      }
+
+      .uc-right {
+        background-color: rgb(56, 133, 56);
+        grid-area: uc-r;
+      }
+
+      .middle {
+        background-color: rgb(184, 15, 161);
+        grid-area: mid;
+      }
+
+      .lower {
+        background-color: rgb(95, 39, 88);
+        grid-area: low;
+      }
+
+      .footer {
+        background-color: #222;
+        grid-area: foo;
+      }
+
+       media queries breakpoint, analizo cuantas columnas, filas voy a necesitar
+      Grid: 5cx5r
+
+      @media screen and (min-width: 768px) {
+        body {
+          grid-template: repeat(6, auto) / repeat(5, 1fr);
+          grid-template-areas:
+            "header header header header header"
+            "nav nav nav nav nav"
+            "uc-c uc-c uc-c uc-c uc-c"
+            "uc-l mid mid mid uc-r"
+            "uc-l low low low uc-r"
+            "foo foo foo foo foo";
+        }
+        .nav {
+        display: block;
+      }
+        .header__texto::before {
+        content: "Awesome Header Tablet ";
+      }
+      .nav__texto::before {
+        content: "Awesome Nav Tablet ";
+      }
+      .footer__texto::before {
+        content: "Awesome Footer Tablet ";
+      }
+    }
+
+      @media screen and (min-width: 1200px) {
+        body {
+          grid-template: repeat(5, auto) / repeat(5, 1fr);
+          grid-template-areas:
+            "header header header header header"
+            "nav uc-l uc-c uc-c uc-r"
+            "nav mid mid mid mid"
+            "nav low low low low"
+            "foo foo foo foo foo";
+        }
+.nav {
+  display: block;
+}
+        .header__texto::before {
+        content: "Outstanding Header Desktop ";
+      }
+      .nav__texto::before {
+        content: "Outstanding Nav Desktop ";
+      }
+      .footer__texto::before {
+        content: "Outstanding Footer Desktop ";
+      }
+    }
+*/

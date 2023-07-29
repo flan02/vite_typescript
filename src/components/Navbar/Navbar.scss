@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    
+    align-items: center;
+    background-color: black;
+    &__nav {
+        display: flex;
+        flex-direction: row;
+        
+        border:1px solid red;
+        
+    }
+    &__Menubar > ul {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.header__nav > .title {
+    color: lightblue;
+    border:1px solid yellow;
+}

@@ -1,0 +1,33 @@
+// Estaria bueno poner el codigo de normalize aqui.
+
+#root {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box; /* el tamano de la caja comienza dsd el borde */
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: none;
+    font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
