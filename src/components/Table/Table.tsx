@@ -1,25 +1,24 @@
-
-
 import { Person } from '@/models';
 import { Pagination } from '../Pagination';
 import './Table.scss';
-
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addFavourite } from '@/redux/states/favourites';
+import { addPeople } from '@/redux/states';
+import { People } from '@/data';
+import store from '@/redux/store';
 export interface TableProps {
-	TableProps: Person[]
+
 	pageSize: number
 
 }
 
-const Table: React.FC<TableProps> = ({ pageSize, TableProps }) => {
-
-
+const Table: React.FC<TableProps> = ({ pageSize }) => {
 	return (
 		<div className='home__table'>
 			<table className='table col-span-12'>
 				<tbody className=''>
-					<Row TableProps={TableProps} ></Row>
+					<Row></Row>
 				</tbody>
 				<Pagination pageSize={pageSize} />
 			</table>
@@ -27,27 +26,31 @@ const Table: React.FC<TableProps> = ({ pageSize, TableProps }) => {
 	)
 };
 
-
 export interface RowProps {
-	TableProps: Person[]
-
 
 }
 
-const Row: React.FC<RowProps> = ({ TableProps }) => {
+const Row: React.FC<RowProps> = () => {
 	const [selectedPeople, setSelectedPeople] = useState<Person[]>([])
 	const findPerson = (person: Person) => !!selectedPeople.find(p => p.id === person.id)
 	const filterPerson = (person: Person) => selectedPeople.filter(p => p.id === person.id)
+	const dispatch = useDispatch()
 
 	const handleChange = (person: Person) => {
-		setSelectedPeople(findPerson(person)
+		const filteredPeople = findPerson(person)
 			? (filterPerson(person))
-			: [...selectedPeople, person])
-		console.log(selectedPeople);
+			: [...selectedPeople, person]
+		dispatch(addFavourite(filteredPeople))
+		setSelectedPeople(filteredPeople)
 	}
 
+	useEffect(() => {
+		dispatch(addPeople(People))
+	}, [dispatch])
+
+
 	return (
-		TableProps.map((row, index) => (
+		store.getState().people.map((row, index) => (
 			<tr key={index} className='table__tr'>
 				{(index !== 0
 					? <td className='table__checkbox'>
@@ -55,7 +58,6 @@ const Row: React.FC<RowProps> = ({ TableProps }) => {
 							type='checkbox'
 							checked={findPerson(row)}
 							onChange={() => handleChange(row)}
-
 						/>
 					</td>
 					: <td>{""}</td>

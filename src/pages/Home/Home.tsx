@@ -1,6 +1,6 @@
 
 import { Table } from '@/components/Table';
-import { People } from '@/data';
+// import { People } from '@/data';
 
 
 
@@ -16,7 +16,7 @@ const Home: React.FC<HomeProps> = () => {
 
 	return (
 		<div className='home'>
-			<Table TableProps={People} pageSize={page} />
+			<Table pageSize={page} />
 		</div>
 
 	)
