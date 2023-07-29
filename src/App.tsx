@@ -4,6 +4,7 @@ import 'primeicons/primeicons.css';
 
 import { Navbar } from "./components"
 import { Home } from "./pages"
+import { Footer } from './components/Footer';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div className="grid">
       <Navbar />
       <Home />
+      <Footer />
     </div>
   )
 }
