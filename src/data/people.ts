@@ -1,14 +1,5 @@
 export const People = [
     {
-        id: "id",
-        name: "name",
-        category: "category",
-        categoryImage: "categoryImage",
-        company: "company",
-        companyImage: "companyImage",
-        levelOfHappiness: "levelOfHappiness",
-    },
-    {
         id: 1,
         name: "John Doe",
         category: "employee",
