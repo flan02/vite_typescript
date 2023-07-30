@@ -30,11 +30,15 @@ export interface RowProps {
 }
 
 const Row: React.FC<RowProps> = () => {
+
 	const [selectedPeople, setSelectedPeople] = useState<Person[]>([])
-	const findPerson = (person: Person) => !!selectedPeople.find(p => p.id === person.id)
-	const filterPerson = (person: Person) => selectedPeople.filter(p => p.id === person.id)
+
 	const dispatch = useDispatch()
 	const statePeople = useSelector((store: AppStore) => store.people) // Esta data viene desde Redux
+	const favouritePeople = useSelector((store: AppStore) => store.favourites) // Esta data viene desde Redux
+
+	const findPerson = (person: Person) => !!favouritePeople.find(p => p.id === person.id)
+	const filterPerson = (person: Person) => favouritePeople.filter(p => p.id === person.id)
 
 	const handleChange = (person: Person) => {
 		const filteredPeople = findPerson(person)
@@ -47,6 +51,10 @@ const Row: React.FC<RowProps> = () => {
 	useEffect(() => {
 		dispatch(addPeople(People))
 	}, [dispatch])
+
+	useEffect(() => {
+		setSelectedPeople(favouritePeople)
+	}, [favouritePeople])
 
 
 	return (

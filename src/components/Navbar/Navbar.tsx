@@ -1,4 +1,5 @@
 import React from 'react';
+//import { AppStore } from '@/redux/store';
 /*
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
@@ -6,11 +7,12 @@ import { MenuItem } from 'primereact/menuitem';
 */
 import './Navbar.scss';
 import { FavouriteTable } from './FavouriteTable';
+//import { useSelector } from 'react-redux';
 
 export interface NavbarProps { }
 
 const Navbar: React.FC<NavbarProps> = () => {
-
+	//useSelector((store: AppStore) =const stateFavourites = > store.favourites)
 
 	return (
 

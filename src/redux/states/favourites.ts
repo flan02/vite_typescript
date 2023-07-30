@@ -12,9 +12,14 @@ export const favouritesSlice = createSlice({
         addFavourite: (state, action) => {
             setLocalStorage(LocalStorageTypes.FAVORITES, state)
             return action.payload
+        },
+        removeFavourite: (state, action) => {
+            const filteredState = state.filter((p: Person) => p.id !== action.payload.id)
+            setLocalStorage(LocalStorageTypes.FAVORITES, filteredState)
+            return filteredState
         }
     }
 })
 
 
-export const { addFavourite } = favouritesSlice.actions
+export const { addFavourite, removeFavourite } = favouritesSlice.actions
