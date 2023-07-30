@@ -1,10 +1,12 @@
 // aqui va el import con las fuentes de google fonts si deseo utilizarlas
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
+
 
 :root {
     /* fonts */
-    --font-primary: 'Roboto', verdana; // asi vamos guardando las fuentes en variables
+    --font-roboto: 'Roboto', sans-serif;
     /* colors */
-    --color-own: rgb(198, 191, 236);
-    --color-own-light: whitesmoke;
-    ;
+    --background-primary: #f5ece4;
+    --font-primary: rgb(11, 11, 48);    
 }

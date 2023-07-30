@@ -1,4 +1,4 @@
-import { Table } from '@/components/Table';
+
 import React from 'react';
 
 export interface HomeProps { }
@@ -7,7 +7,7 @@ const Home: React.FC<HomeProps> = () => {
 
 	return (
 		<div className='home'>
-			<Table />
+			<h2>Home</h2>
 		</div>
 
 	)
